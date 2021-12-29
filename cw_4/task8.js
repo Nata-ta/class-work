@@ -16,7 +16,7 @@
 // 			Сумма чисел в диапазоне от индекса C по индекс D равна: 10
 
 var newArr = getRandomArr(5, -3, 10);
-console.log(newArr);
+console.log(`Массив: [${newArr}] сгенерированный от -3 до 10`);
 
 function getRandomArr(n, a, b) {
     if (a < b) {
@@ -41,10 +41,9 @@ function getRandomArr(n, a, b) {
     }
 }
 
-function calcSum(k, m) {
-    if (k >= 0 && m >= 0 && k < newArr.length && m < newArr.length && k <= m) {
-        var mySum = newArr.slice(k, m);
-        console.log(mySum);
+function calcSum(k, m, arr) {
+    if (k >= 0 && m >= 0 && k < arr.length && m < arr.length && k <= m) {
+        var mySum = arr.slice(k, m);
         var sum = 0;
 
         for (var i = 0; i < mySum.length; i++) {
@@ -57,4 +56,4 @@ function calcSum(k, m) {
     return sum;
 }
 
-console.log(calcSum(2, 4));
+console.log(`Сумма чисел в диапазоне от индекса 2 по индекс 4 равна: ${calcSum(2, 4, newArr)}`);
